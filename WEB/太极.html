@@ -8,6 +8,7 @@
         body{
             background-color: #555;
         }
+        /* 太极图整体 */
         #taiji{
             width: 400px;
             height: 400px;
@@ -25,16 +26,19 @@
             position: absolute;
             top: 0;
         }
+        /* 左边半块 */
         #taiji::before{
             left: 0;
             background-color: black;
             border-radius: 200px 0 0 200px;
         }
+        /* 右边半块 */
         #taiji::after{
             left: 200px;
             background-color: white;
             border-radius: 0 200px 200px 0;
         }
+        /* 小圆 */
         .circle1,.circle2{
             width: 200px;
             height: 200px;
@@ -71,16 +75,18 @@
             bottom: 60px;
             background-color: black;
         }
+        /* 动画效果 */
         @keyframes rotate {
             0%{
-                transform: rotate(0deg);
+                transform: rotate(0deg);/*开始状态*/
             }
             100%{
-                transform: rotate(360deg);
+                transform: rotate(360deg);/*结束*/
             }
         }
     </style>
 </head>
+<!-- 框架 -->
 <body>
     <div id="taiji">
         <div class="circle1"></div>
