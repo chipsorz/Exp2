@@ -37,3 +37,51 @@
 .crumb-nav a{font-size: 1rem;margin: 1px 0px;border-color: hsla(85, 60%, 60%, 0.1);padding: 6px 12px;}
 .crumb-nav a:hover{color: hsl(85, 55%, 50%);}
 
+/* 公共 */
+/* 清除所有元素默认内外边距 */
+*{padding: 0px;margin: 0px;}
+.center {width: 100%;max-width: 1280px;min-width: 320px;margin: 0 auto;}
+img {width: 100%;height: 100px;border: 0px;}
+.full-width{width: 100%;}
+/* 顶部广告 */
+#top-advert a {display: flex;flex-flow: row nowrap;}
+/* 页眉网格布局，站内搜索3列 */
+#page-top{display: grid; grid-template-columns: repeat(5,1fr);grid-template-rows: 100px;grid-template-areas: "lg sr sr sr cr";}
+/* logo网格项目内容局中 */
+#logo {justify-self: center; align-self:center; grid-area: lg;}
+/* 站内搜索网格项目内容居中 */
+#search {justify-self: center;align-self: center; grid-area: sr;}
+/* 购物车网格项目内容居中 */
+#cart {justify-self: center; align-self: center; grid-area: cr;}
+/* 导航菜单 */
+nav {border-bottom: 1px solid hsl(0, 50%, 100%); border-top: 1px solid hsl(0, 50%, 100%);}
+/* 内容顶部网格布局，网格线定位 */
+#main-content-top{display: grid;grid-template-columns: repeat(5,1fr);}
+/* 图书分类列表子列表为伸缩盒按行显示，一般情况外边距为12px */
+#classify {padding: 12px 12px 0 12px;}
+#classify ul ul{display: flex;flex-flow: row wrap;}
+#classify ul ul li {margin: 2px;}
+/* 横幅广告三列 */
+#banner {grid-column-end: span 3; margin: 0px 1px;}
+/* 用户部分伸缩盒，按列显示 */
+#user {display: flex;flex-flow: column wrap;align-items: center;justify-content: space-evenly; margin-bottom: 12px;}
+/* 主要内容 */
+#main-content {display: flex;flex-flow: row wrap;margin: 1px 0px;}
+/* 左边内容扩展比例为4 */
+#main-content-left {flex: 4; margin-right: 1px; padding: 12px;}
+/* 本周推荐，最近新书等按行显示不换行 */
+.content {display: flex; flex-flow: row nowrap; margin-bottom: 10px;}
+/* 本周推荐，最近新书等为包含块 */
+.content-item {position: relative;box-sizing: border-box;padding: 0 2px;}
+.description,.recommend-description,.new-description{display: flex;flex-flow: column;align-items: center;position: relative;}
+/* 左对齐 */
+.description span,.recommend-description span,.new-description span{align-self: flex-start;}
+/* 右边栏比例为1 */
+aside {flex: 1;padding: 12px;}
+#about .content{flex-flow: row wrap;}
+/* 页脚伸缩盒，按行显示 */
+footer {display: flex;flex-flow: row wrap;min-height: 100px;align-items: flex-start;padding-top: 20px;}
+footer .col {flex: 1;display: flex; flex-flow: column;align-items: center;}
+/* 版权信息 */
+#copyright {display: flex;justify-content: center;align-items: center;flex-flow: column;}
+#copyright img {max-width: 80px;max-height: 30px;}
