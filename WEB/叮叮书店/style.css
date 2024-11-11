@@ -39,9 +39,9 @@
 
 /* 公共 */
 /* 清除所有元素默认内外边距 */
-*{padding: 0px;margin: 0px;}
+* {padding: 0px;margin: 0px;}
 .center {width: 100%;max-width: 1280px;min-width: 320px;margin: 0 auto;}
-img {width: 100%;height: 100px;border: 0px;}
+img {width: 100%;height: 100%;border: 0px;}
 .full-width{width: 100%;}
 /* 顶部广告 */
 #top-advert a {display: flex;flex-flow: row nowrap;}
@@ -84,4 +84,69 @@ footer {display: flex;flex-flow: row wrap;min-height: 100px;align-items: flex-st
 footer .col {flex: 1;display: flex; flex-flow: column;align-items: center;}
 /* 版权信息 */
 #copyright {display: flex;justify-content: center;align-items: center;flex-flow: column;}
-#copyright img {max-width: 80px;max-height: 30px;}
+#copyright img {max-width: 80px;}
+
+/* 文本 */
+* {font-family: "微软雅黑",sans-serif;color: hsl(150, 40%, 25%);list-style-type: none;}
+p {text-indent: 2rem;}
+
+/* 页眉和导航菜单黏性定位，位于页面顶部 */
+#sticky {position: sticky;top: 0; z-index: 100;width: 100%;}
+/* 页眉 */
+.full-width{background-color: hsl(85, 60%, 60%);}
+/* 站内搜索外观 */
+#search{width: 80%;min-width: 320px;height: 100%;}
+#search form{display: flex;flex-flow: row nowrap;height: 100%;justify-content: center;align-items: center;}
+#search input[type = "search"]{width: 100%;}
+#search input[type = "search"]{background-color: hsl(0, 100%, 100%);font-size: 1.1rem;border: 1px solid hsl(0, 100%, 100%);height: 40%;}
+#search input[type = "submit"]{background-color: hsl(85, 55%, 50%);font-size: 1.1rem;border: 1px solid hsl(0, 100%, 100%);padding: 0 18px;color: hsl(40, 95%, 70%); height: 40%;}
+/* 导航菜单 */
+nav {background-color: hsl(85, 80%, 95%);}
+
+/* 图书分类 */
+#classify {background-color: hsla(85, 60%, 60%, 0.1);}
+/* 横幅广告外观 */
+#banner {background-color: hsla(85, 60%, 60%, 0.1);}
+#banner dl{display: flex;flex-flow: column;}
+/* 设置定义列表dl中dt在下面显示外观为圆形 */
+#banner dt{display: flex;justify-content: center;align-items: center;order: 1;}
+#banner dt a{display: flex;justify-content: center;align-items: center;width: 24px;height: 24px;border-radius: 50%;padding: 0 0 1px;margin: 0 5px;background-color: hsl(85, 55%, 50%);color: hsl(0, 0, 100%);text-decoration: none;font-size: 0.8rem;}
+/* 用户新闻外观 */
+#user-news {background-color: hsla(85, 60%, 60%, 0.1);padding: 12px;}
+#user div{line-height: 3rem;}
+#data-time{font-size: 0.9rem;}
+/* 设置超链接新人福利和VIP会员外观 */
+#user #btn-new,#user #btn-vip {background-color: hsl(0, 100%, 50%);color: hsl(0, 100%, 100%);padding: 3px 12px;font-size: 0.8rem;border-radius: 50%;}
+#news h4{text-align: center;background-color: hsl(85, 55%, 50%);color: hsl(0, 100%, 100%);padding: 3px 0px;margin: 12px 0px;}
+/* 溢出部分不显示用省略号替代显示 */
+#news li{list-style-image: url(../叮叮书店素材/图片素材/bullet.png);list-style-position: inside;overflow: hidden;text-overflow: ellipsis;max-width: 240px;white-space:nowrap;}
+
+/* 左边内容 */
+#main-content-left{background-color: hsla(85, 60%, 60%, 0.1);}
+/* 本周推荐,最近新书,最近促销外观 */
+/* 最近新书定位在左上角 */
+.mark{background-color: hsl(150, 40%, 30%);color: hsl(0, 100%, 100%);position: absolute;border-radius: 50%;min-width: 36px;min-height: 35px;font-size: 1rem;text-align: center;padding-top: 6px;padding-left: 2px;box-sizing: border-box;z-index: 1;top: 5px;left: 5px;}
+.mark1{background-color: hsl(0, 100%, 50%);color: hsl(0, 100%, 100%);position: absolute;border-radius: 50%;min-width: 36px;min-height: 35px;font-size: 1rem;text-align: center;padding-top: 6px;padding-left: 2px;box-sizing: border-box;z-index: 1;top: 5px;left: 5px;}
+/* 按列显示 */
+.description,.recommend-description,.new-description{display: flex;flex-flow: column;align-items: center;position: relative;padding: 5px;}
+.description h3,.recommend-description h3,.new-description h3{margin: 10px 0px;align-items: center;}
+.description span,.recommend-description span,.new-description span{align-self: flex-start;}
+/* 右边栏 */
+aside{background-color: hsla(85, 60%, 60%, 0.1);}
+/* 版权信息 */
+#copyright{background-color: hsla(85, 60%, 60%, 0.1);padding: 18px 0px;}
+
+
+/* cart.html */
+.cart-table h3{margin: 1rem 0;}
+/* 表格合并边框 */
+.cart-table table{font-size: 1.2rem;width: 100%;border-collapse: collapse;margin: 10px 0px;}
+.cart-table tr,.cart-table td{border: 1px solid hsl(85, 55%, 50%);}
+.cart-table td h4 {font-size: 1rem;}
+.cart-table img{width: 60px;height: 60px;}
+.cart-table:first-child{text-align: center;}
+.cart-table td:nth-child(5),.cart-table td:nth-child(4),.cart-table td:nth-child(3){text-align: right;padding-right: 5px;}
+.cart-table tr:last-child a{font-size: 1.1rem;text-decoration: none;margin-left: 20px;}
+.cart-table tr:last-child a:hover{color: hsl(85, 55%, 50%);}
+/*第一行最后一行背景色  */
+.cart-table tr:first-child,.cart-table tr:last-child{line-height: 40px;text-align: center;}
