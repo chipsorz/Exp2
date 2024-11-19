@@ -150,3 +150,179 @@ aside{background-color: hsla(85, 60%, 60%, 0.1);}
 .cart-table tr:last-child a:hover{color: hsl(85, 55%, 50%);}
 /*第一行最后一行背景色  */
 .cart-table tr:first-child,.cart-table tr:last-child{line-height: 40px;text-align: center;}
+
+
+/* 水平菜单 */
+nav ul {display: flex;flex-flow: row wrap;}
+/* 5个菜单宽度各占20% */
+nav ul li {width: 20%;}
+nav ul a {display: flex;align-items: center;justify-content: center;text-decoration: none;font-size: 110%;font-weight: normal;margin: 0 1px;padding: 5% 0;}
+nav ul a:hover {background-color: hsl(85, 55%, 50%); color: hsl(0, 0%, 100%);}
+/* 多级菜单 */
+nav ul li{position: relative;}
+nav ul ul{visibility: hidden;position: absolute;background: hsl(85, 55%, 50%);width: 100%;}
+nav ul ul li{width: 100%;}
+nav ul ul li a{border-top: 1px solid hsl(0, 0%, 100%);}
+nav ul li:hover ul{visibility:visible;z-index: 100;}
+
+
+/* 栏目图标字体 */
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../叮叮书店素材/图标字库/fontawesome-webfont.woff');
+    src: url('../叮叮书店素材/图标字库/fontawesome-webfont.eot'),
+         url('../叮叮书店素材/图标字库/fontawesome-webfont.woff2'),
+         url('../叮叮书店素材/图标字库/fontawesome-webfont.ttf'),
+         url('../叮叮书店素材/图标字库/fontawesome-webfont.svg');
+    font-style: normal;
+    font-weight: normal;
+}
+/* 设置栏目标题图标样式 */
+[class^="icon"] {font-family: FontAwesome; font-size: 1.5rem;display: flex;align-items: center;float: left;margin-right: 0.5rem;font-weight: normal;color: hsl(85, 55%, 40%);}
+/* 本周推荐 */
+.icon-book::before{content: "\f02d";}
+/* 最近新书 */
+.icon-new::before{content: "\f044";}
+/* 图书分类 */
+.icon-classify::before{content: "\f022";}
+/* 最近促销 */
+.icon-sale::before{content: "\f295";}
+/* 畅销图书 */
+.icon-sell::before{content: "\f073";}
+/* 合作伙伴 */
+.icon-partner::before{content: "\f2b5";}
+/* 关于书店 */
+.icon-about::before{content: "\f143";}
+/* 客户服务 */
+.icon-contact::before{content: "\f199";}
+/* 购物车 */
+.icon-cart::before{content: "\f07a";}
+.title {border-bottom: hsl(85, 55%, 50%) solid 1px;padding-bottom: 1px;margin-bottom: 0.6rem;display: flex;justify-content: space-between;}
+
+/* 通用超链接伪类 */
+a {text-decoration: none;}
+a:hover{color: hsl(85, 55%, 50%);}
+/* 图书分类 */
+#partner{margin: 20px 0px;}
+#classify li a,#partner li a {text-decoration: none;color: hsl(150, 40%, 30%);}
+#classify a:hover,#partner a:hover {text-decoration: none;color: hsl(85, 55%, 50%);}
+#classify ul {margin: 0.4rem;}
+
+/* 本周推荐、最近新书、最近促销购物车图标 */
+.main-content-cart .icon-cart{font-size: 1rem;}
+.main-content-cart {align-self: flex-end;background-color: hsla(85, 55%, 50%, 0.4);border-radius: 50%;padding: 6px 0 6px 6px;}
+.main-content-cart:hover{background-color: hsl(150, 40%, 30%);}
+.main-content-cart:hover .icon-cart{color: hsl(0, 0, 100%);}
+
+/* 畅销图书样式 */
+#best-selling {margin-bottom: 10px;}
+#best-selling ul {margin-top: 1rem;}
+#best-selling li::before{content: counter(listxh);background: hsl(85, 55%, 50%); ;padding: 2px 6px;color: hsl(0, 0, 100%);margin-right: 5px;vertical-align: top;float: left;}
+/* 内容过多时，溢出部分不显示用省略号替代显示 */
+#best-selling li {counter-increment: listxh;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;margin-top: 8px;border-bottom: hsl(0, 0, 80%) dashed 1px;max-width: 230px;}
+.p-img img{width: 80px;height: 80px;}
+#best-selling .curr .p-img{float: left;}
+#best-selling .curr .p-name strong {color: hsl(0, 100%, 50%);font-size: 1rem;}
+#best-selling .curr .p-name del{font-size: 1rem;}
+#best-selling .curr {display: none;}
+#best-selling a{color: hsl(0, 0%, 0%);text-decoration: none;font-size: 1rem;}
+#best-selling li:hover{text-shadow: 1px 4px 4px hsl(85, 55%, 50%);white-space: normal;}
+#best-selling li:hover .selling{display: none;}
+#best-selling li:hover .curr{display: block;}
+
+
+/* 页眉购物车样式 */
+.cart-head .icon-cart{font-size: 2rem;margin: 5px 0px;}
+#cart-position{position: relative;}
+#cart li:hover ul{display: block;}
+#cart .cart-head{text-decoration: none;}
+#cart .cart-head sup{color: hsl(0, 100%, 50%);background-color: hsl(0, 100%, 100%);border-radius: 50%;padding: 1px 6px 2px 5px;}
+#cart .cart-head:hover sup{color: hsl(150, 40%, 30%);}
+#dropdown-cart {display: none;z-index: 100;background-color: hsl(0, 50%, 100%);border: 1px solid hsl(85, 55%, 50%);position: absolute;width: 400%;min-width: 180px;max-width: 200px;left: -175%;top: 160%;padding: 10px 0px;font-size: 1rem;}
+#dropdown-cart li{display: flex;flex-flow: row nowrap;padding: 0px 6px;}
+#dropdown-cart li .cart-thumb{flex: 1;}
+#dropdown-cart li .cart-title{flex:2;}
+#dropdown-cart #btn-cart{justify-content: center;}
+#dropdown-cart #btn-cart a{background-color: hsl(85, 55%, 50%);color: hsl(0, 100%, 100%);padding: 6px 12px;font-size: 0.8rem;border-radius: 100%;transition: background-color linear 0.5s;}
+#dropdown-cart #btn-cart a:hover{background-color: hsl(0, 100%, 50%);}
+
+/* 导航菜单背景过度 */
+nav ul a{transition: background-color 0.5s linear;}
+/* 用户栏 */
+#user #btn-new,#user #btn-vip{transition: background-color 0.5s linear;}
+#user #btn-new:hover,#user #btn-vip:hover{background-color: hsl(85, 55%, 50%);}
+/* 本周推荐、最近新书、最近促销购物车 */
+.main-content-cart {transition: background-color 0.5s linear;}
+/* 畅销图书列表文字 */
+#best-selling li {transition: text-shadow  1s linear;}
+
+/* 本周推荐动画 */
+.recommend-description{perspective: 800px;}
+.recommend-description .description-text{height: 100%;width: 100%; ;position: absolute;z-index: -1;visibility: hidden;transition: background-color 1s linear;transform-origin: center bottom;transform: rotateX(90deg);}
+.recommend-description .description-text p{color: hsl(0, 100%, 100%);padding: 18px 12px 18px 14px;font-size: 1rem;}
+.recommend-description:hover img{visibility: hidden;}
+.recommend-description:hover .description-text{visibility: visible;background-color: hsl(85, 55%, 50%);transform: rotateX(0deg);}
+
+/* 最近新书动画 */
+.new-description{perspective: 800px;}
+.new-description:hover img{transform: rotateY(360deg);transition: 2s;}
+/* 最近促销边框过度 */
+.description:hover{border: 1px solid hsl(85, 55%, 50%);}
+
+/* 背景滑动 */
+.title-cover{position: absolute;top: -100%; background-color: hsla(150, 40%, 30%, 0.2);width: 100%;height: 100%;}
+.title a{text-decoration:none; background: hsl(85, 55%, 50%); color: hsl(0, 0%, 100%); min-width: 120px; display:flex; justify-content: center; height: 30px; align-items: center;padding-bottom: 2px; position: relative; overflow: hidden;}
+.title a:hover .title-cover{transition: 0.5s linear;transform: translateY(100%);}
+
+
+/* 响应式设计适应移动设计 */
+/* 屏幕宽度小于等于720px */
+@media screen and (max-width:720px){
+    /* 页眉两行，logo跟购物车一行，站内搜索一行 */
+    #page-top{
+        grid-template-areas: 
+        "lg lg lg cr cr"
+        "sr sr sr sr sr";
+    }
+    /* 站内搜索独显 */
+    #search input[type = "search"], #search input[type = "submit"]{height: 100%;}
+    #search {width: 100%;}
+    /* 内容顶部两行，图书分类用户新闻占一行，广告一行 */
+    #main-content-top {grid-template-columns: repeat(2,1fr);grid-template-rows: repeat(2,minmax(50px,auto));}
+    #classify{grid-row: 1/2;grid-column: 1/2;}
+    #user-news{grid-row: 1/2;grid-column: 2/3;}
+    #banner{grid-row: 2/3;grid-column: 1/3;}
+    /* 本周推荐等可以换行，每行显示两项 */
+    .content{flex-flow: row wrap;}
+    .content-item{max-width: 50%;}
+}
+/* 屏幕宽度小于等于360px */
+@media screen and (max-width:360px){
+    /* 广告不显示 */
+    #top-advert{display: none;}
+    /* 页眉3行其他各占1行 */
+    #page-top{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "lg"
+        "cr"
+        "sr";
+    }
+    /* 菜单项正常显示在一行 */
+    nav ul a {font-size: 100%;}
+    /* 页眉不在固定在顶部 */
+    #sticky{position: relative;}
+    /* 内容顶部3行，图书分类,用户新闻,广告占一行， */
+    #main-content-top {grid-template-columns: repeat(1,1fr);grid-template-rows: repeat(3,minmax(50px,auto));}
+    #classify{grid-row: 1/2;grid-column: 1/2;}
+    #user-news{grid-row: 2/3;grid-column: 1/2;}
+    #banner{grid-row: 3/4;grid-column: 1/2;}
+    /* 本周推荐等各显一行 */
+    .content-item{max-width: 100%;}
+    #copyright{text-align: center;}
+}
+/* 屏幕宽度小于等于320px */
+@media screen and (max-width:320px){
+    /* 显示在一行 */
+    nav ul a {font-size: 95%;}
+}
