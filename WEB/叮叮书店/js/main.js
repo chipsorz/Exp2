@@ -30,6 +30,7 @@ function showtime(){
 
 var count = 2;
 var a = [...document.querySelectorAll('#banner a')];
+var carouselID = window.setInterval("carousel()",2000);
 for(let i = 0; i < a.length; i++){
     a[i].addEventListener('click', function(){
         count = i + 1;
