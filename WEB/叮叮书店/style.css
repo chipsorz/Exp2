@@ -326,3 +326,20 @@ nav ul a{transition: background-color 0.5s linear;}
     /* 显示在一行 */
     nav ul a {font-size: 95%;}
 }
+
+/* 电子书 */
+.list ul{display: grid;grid-template-columns: repeat(3,1fr);}
+.list ul li{border: hsl(85, 55%, 50%) 1px solid; margin: 6px;}
+#ulcart{display: grid;margin: 12px 6px;}
+#ulcart div{justify-self: center;}
+#ulcart div .icon-cart{font-size: 2rem;}
+#ulcart ul{margin-top: 6px;}
+.list-title{display: flex; flex-flow: row wrap; background-color: hsl(85, 55%, 50%);}
+.list-title span {color: hsl(0, 100%, 100%);flex: 1;text-align: center;padding: 6px;}
+.list-record{display: flex;flex-flow: row wrap;}
+.list-record span{color: hsl(85, 55%, 50%);flex: 1;border: hsl(85, 55%, 50%) 1px solid;margin: 1px;display: flex;justify-content: center;align-items: center;}
+/* 屏幕宽度小于等于360px */
+@media screen and (max-width:360px){
+    .list ul{grid-template-columns: 1fr;}
+    #main-content {flex-flow: column wrap;}
+}
